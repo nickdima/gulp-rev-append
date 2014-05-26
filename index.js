@@ -28,7 +28,7 @@ var revPlugin = function revPlugin() {
       line = lines[i];
       groups = FILE_DECL.exec(line);
       if(groups && groups.length > 1) {
-        dependencyPath = path.resolve(path.dirname(file.path), groups[1]);
+        dependencyPath = path.join(path.dirname(file.path), groups[1]);
         try {
           data = fs.readFileSync(dependencyPath);
           hash = crypto.createHash('md5');
